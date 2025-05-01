@@ -18,6 +18,12 @@ With a dev install conda command should be run using
 python -m conda <commmand>
 ```
 
+In order to use `conda` for commands first run:
+
+```
+eval $(./env/condabin/conda shell.zsh hook)
+```
+
 ## Usage
 
 Once installed this plugin will automatically record information about each environment

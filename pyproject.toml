@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "conda-history-d"
+description = "conda plugin which records a detailed history of environments in a history.d directory."
+readme = "README.md"
+authors = [
+  {name = "Jonathan J. Helmus", email = "jhelmus@anaconda.com"}
+]
+license = {file = "LICENSE"}
+classifiers = [
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy"
+]
+requires-python = ">=3.9"
+dependencies = [
+  # "conda >=23.9.0",
+]
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/jjhelmus/conda-history-d"
+
+[project.entry-points.conda]
+conda-checkpoints = "conda_history_d.plugin"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "conda_history_d/_version.py"
